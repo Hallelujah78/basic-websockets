@@ -9,6 +9,30 @@
 
 <body>
     <h1>Basic Websocket page</h1>
+    <span>Message Received: </span>
+    <p class="message"></p>
+    <script>
+        // use wss in production (secure form of websockets)
+        // ws is okay in development
+        const ws = new WebSocket("ws://localhost:8082");
+        ws.addEventListener("open", () => {
+            console.log("we are connected!");
+
+            // send data
+            ws.send("Hey, how's it going?");
+
+
+
+        });
+
+        ws.addEventListener("message", (e) => {
+            console.log(e);
+            const messageElement = document.querySelector('.message');
+            messageElement.innerHTML = e.data;
+        })
+
+
+    </script>
 </body>
 
 </html>

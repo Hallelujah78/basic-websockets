@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "node": "^23.1.0",
     "ws": "^8.18.0"
   }
 }
